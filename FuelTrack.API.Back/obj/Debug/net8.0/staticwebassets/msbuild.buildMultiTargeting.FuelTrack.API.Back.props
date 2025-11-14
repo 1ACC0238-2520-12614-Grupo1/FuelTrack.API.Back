@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\FuelTrack.API.Back.props" />
+</Project>

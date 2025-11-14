@@ -1,0 +1,6 @@
+@FuelTrack.API.Back_HostAddress = http://localhost:5081
+
+GET {{FuelTrack.API.Back_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

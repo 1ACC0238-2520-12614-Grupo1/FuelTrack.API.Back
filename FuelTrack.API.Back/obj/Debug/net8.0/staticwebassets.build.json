@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "kuAlYxkCfbmhjP6kbYVSu1jVIjFuA7NYGERnzhIMDSg=",
+  "Source": "FuelTrack.API.Back",
+  "BasePath": "_content/FuelTrack.API.Back",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
