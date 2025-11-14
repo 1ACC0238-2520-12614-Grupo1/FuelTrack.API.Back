@@ -3,6 +3,7 @@ using Microsoft.OpenApi.Models;
 using FuelTrack.API.Back.Services.Auth;
 using FuelTrack.API.Back.Services.Orders;
 using FuelTrack.API.Back.Services.Tariffs;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -38,18 +39,16 @@ builder.Services.AddSingleton<ITariffService, TariffService>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+// Swagger SIEMPRE habilitado (dev y prod)
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "FuelTrack.API.Back v1");
-        // c.RoutePrefix = string.Empty; // opcional si quisieras que Swagger sea la raíz
-    });
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "FuelTrack.API.Back v1");
+    // c.RoutePrefix = string.Empty; // si quieres que Swagger esté en "/"
+});
 
-app.UseHttpsRedirection();
+// Opcional: puedes comentar esta línea si no quieres redirección a HTTPS
+// app.UseHttpsRedirection();
 
 app.MapControllers();
 
